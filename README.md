@@ -36,21 +36,27 @@ O **MeuAppDeNavegação** foi desenvolvido para praticar e exemplificar:
 2. Clone o repositório e acesse sua pasta:  
    ```bash
    git clone https://github.com/anajuca/MeuAppDeNavegacao.git
+   ```
+   ```bash
    cd MeuAppDeNavegação
    ```
 3. Instale as dependências:  
    ```bash
    npm install @react-navigation/native
+   ```
+   ```bash
    npm install react-native-screens react-native-safe-area-context
    ```
 4. Instale a biblioteca de navegação em pilha e o AsyncStorage:  
    ```bash
    npm install @react-navigation/stack
+   ```
+   ```bash
    npx expo install @react-native-async-storage/async-storage
    ```
 5. Execute o app:  
    ```bash
-   npm start
+   npx expo start
    ```
 
 ---
