@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { View, Text, Button, StyleSheet, Dimensions, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions, TextInput } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const windowWidth = Dimensions.get('window').width;
@@ -45,7 +45,6 @@ export default function LoginScreen({ navigation }) {
             return;
         }
 
-        // Salva o token de login no AsyncStorage
         try {
             await AsyncStorage.setItem('usuarioLogado', 'logado');
             navigation.navigate('Home');
@@ -56,7 +55,7 @@ export default function LoginScreen({ navigation }) {
     };
 
     return (
-        <View style={styles.container}>
+<View style={styles.container}>
             <Text style={styles.title}>🎀 Bem vindo! 🎀</Text>
             <Text style={styles.subtitle}>Faça Login para continuar</Text>
             <View style={styles.formContainer}>
@@ -76,12 +75,12 @@ export default function LoginScreen({ navigation }) {
                     onChangeText={setSenha}
                     secureTextEntry={true}
                 />
-                <View style={styles.buttonContainer}>
-                    <Button
-                        title="Clique para fazer login"
-                        onPress={Login}
-                    />
-                </View>
+                <TouchableOpacity
+                    style={styles.buttonContainer}
+                    onPress={Login}
+                >
+                    <Text style={styles.buttonText}>Login</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -112,15 +111,24 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         backgroundColor: '#f53196',
+        color: '#f53196',
         margin: 20,
         width: windowWidth * 0.5,
         borderRadius: 20,
-        color: '#fcc2e0'
+        height: 42,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     input: {
         backgroundColor: '#dbd3d4',
         margin: 3,
         borderRadius: 10,
-        height: 42
+        height: 42,
+        borderColor: '#bab1b2',
+        borderWidth: 1,
+    },
+    buttonText: {
+        color: '#dbd3d4',
+        fontSize: 16,
     },
 });
