@@ -56,7 +56,7 @@ O **MeuAppDeNavegação** foi desenvolvido para praticar e exemplificar:
    ```
 5. Execute o app:  
    ```bash
-   npx expo start
+   npx expo start --tunnel
    ```
 
 ---
